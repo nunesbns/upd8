@@ -3,8 +3,10 @@
 namespace Database\Seeders;
 
 use App\Models\Client;
+use App\Models\User;
 use App\Services\ApiBrasilService;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
@@ -19,6 +21,13 @@ class DatabaseSeeder extends Seeder
 
         $this->command->info("Criando clientes no banco de dados");
         Client::factory(1000)->create();
+
+        User::factory(1)->create([
+            'name' => 'Bruno Nunes de Santana',
+            'email' => 'admin@upd8.com.br',
+            'email_verified_at' =>  Carbon::now(),
+            'password' => bcrypt('102030')
+        ]);
     }
 
     private function seedCities()
