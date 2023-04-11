@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('cities', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 15)->nullable(false);
+            $table->string('name', 50)->nullable(false);
             $table->mediumInteger('ibge_code');
             $table->unsignedBigInteger('state_id')->nullable(false);
             $table->foreign('state_id')->references('id')->on('states');

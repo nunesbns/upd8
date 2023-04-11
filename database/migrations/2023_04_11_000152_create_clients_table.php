@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('identity', 11)->nullable(false)->unique()->comment('CPF do cliente');
             $table->string('name', 50)->nullable(false);
-            $table->timestamp('birthdate')->nullable(false);
+            $table->dateTime('birthdate')->nullable(false);
             $table->enum('gender', ['male', 'female'])->nullable(false);
             $table->unsignedBigInteger('city_id')->nullable(false);
             $table->timestamps();
